@@ -27,7 +27,10 @@ function Summary() {
 
             <div className="grid grid-rows-7 grid-flow-col gap-3">
                 {summaryDates.map(e => {
-                    return <Habits key={e.toString()}/>
+                    return <Habits
+                        key={e.toString()}
+                        amount={2}
+                        completed={5}/>
                 })}
                 {amountMinDay > 0 && Array.from({length: amountMinDay}).map((_, i) => {
                     return (
