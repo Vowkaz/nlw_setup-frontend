@@ -1,6 +1,5 @@
 import logo from "../assets/logo.svg";
 import * as Dialog from '@radix-ui/react-dialog';
-import {useState} from "react";
 import {Plus, X} from "phosphor-react";
 import NewHabitForm from "./NewHabitForm";
 
@@ -14,9 +13,9 @@ function Header() {
 
                <Dialog.Trigger
                    type="button"
-                   className="border border-violet-900 font-semibold rounded-lg px-6 py-4 flex items-center gap-2 hover:border-violet-300"
+                   className="border border-amber-500 font-semibold rounded-lg px-6 py-4 flex items-center gap-2 hover:border-amber-300"
                >
-                   <Plus size={20} className="text-violet-500"/>
+                   <Plus size={20} className="text-amber-500"/>
                    New Habit
                </Dialog.Trigger>
                <Dialog.Portal>
