@@ -4,9 +4,9 @@
   padding: 0;
   color: rgba(227, 246, 246, 0.87);
 
-  /*font-synthesis: none;*/
-  /*text-rendering: optimizeLegibility;*/
-  /*-webkit-font-smoothing: antialiased;*/
-  /*-moz-osx-font-smoothing: grayscale;*/
-  /*-webkit-text-size-adjust: 100%;*/
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }

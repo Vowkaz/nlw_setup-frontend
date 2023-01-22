@@ -13,7 +13,8 @@ function Header() {
 
                <Dialog.Trigger
                    type="button"
-                   className="border border-amber-500 font-semibold rounded-lg px-6 py-4 flex items-center gap-2 hover:border-amber-300"
+                   className="transition-colors duration-75 border border-amber-500 font-semibold rounded-lg px-6 py-4 flex items-center gap-2 hover:border-amber-300
+                   focus:ring-amber-200 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-bg"
                >
                    <Plus size={20} className="text-amber-500"/>
                    New Habit

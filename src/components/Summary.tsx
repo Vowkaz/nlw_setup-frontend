@@ -1,7 +1,7 @@
 import Habits from "./habits";
 import generateRangeDatesFromYearStart from "../util/generate-range-between-dates";
 import {useEffect, useState} from "react";
-import { api } from "../lib/axios";
+import {api} from "../lib/axios";
 import dayjs from "dayjs";
 
 type Summary = {
@@ -15,11 +15,11 @@ function Summary() {
 
     const [summary, setSummary] = useState<Summary>([])
 
-    useEffect(() =>{
+    useEffect(() => {
         api.get('summary').then(resp => {
             setSummary(resp.data)
         })
-    },[])
+    }, [])
 
     const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
 
@@ -27,7 +27,6 @@ function Summary() {
 
     const minSummaryDateSize = 18 * 7
     const amountMinDay = minSummaryDateSize - summaryDates.length
-
 
 
     return (
@@ -46,7 +45,7 @@ function Summary() {
             </div>
 
             <div className="grid grid-rows-7 grid-flow-col gap-3">
-                {summaryDates.map(e => {
+                {summary.length > 0 && summaryDates.map(e => {
 
                     const dayInSummary = summary.find(day => {
                         return dayjs(e).isSame(day.date, 'day')
@@ -56,7 +55,7 @@ function Summary() {
                         key={e.toString()}
                         date={e}
                         amount={dayInSummary?.amount}
-                        completed={dayInSummary?.completed}
+                        defaultCompleted={dayInSummary?.completed}
                     />
                 })}
                 {amountMinDay > 0 && Array.from({length: amountMinDay}).map((_, i) => {
