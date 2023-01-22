@@ -1,6 +1,8 @@
 import * as Popover from '@radix-ui/react-popover';
 import * as Progress from "@radix-ui/react-progress";
+import * as Checkbox from "@radix-ui/react-checkbox";
 import clsx from "clsx";
+import {Check} from "phosphor-react";
 
 interface ProgressBarProps {
     amount: number,
@@ -36,6 +38,17 @@ function Habits({ amount, completed }: ProgressBarProps) {
                         />
                     </Progress.Root>
 
+                    <div className="mt-6 flex flex-col gap-3">
+                        <Checkbox.Root
+                            className="flex items-center gap-3 group"
+                        >
+                            <div className="h-8 w-8 rounded-lg flex items-center justify-center bg-zinc-900 border-2 border-zinc-800 group-data-[state=checked]:bg-amber-300 group-data-[state=checked]:border-amber-300">
+                                <Checkbox.Indicator ><Check className="text-zinc-900" size={20}/></Checkbox.Indicator>
+                            </div>
+                            <span className="font-semibold text-zinc-100 leading-tight group-data-[state=checked]:line-through group-data-[state=checked]:text-zinc-300"> Eat something</span>
+                        </Checkbox.Root>
+
+                    </div>
                 </Popover.Content>
             </Popover.Portal>
         </Popover.Root>
